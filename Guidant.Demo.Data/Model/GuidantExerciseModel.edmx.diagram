@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="652f1a7f02964cbbb18737817e24da45" Name="Diagram1">
+        <EntityTypeShape EntityType="GuidantExerciseModel.Client" Width="1.5" PointX="3.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuidantExerciseModel.Portfolio" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuidantExerciseModel.PortfolioSecurity" Width="1.5" PointX="6.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuidantExerciseModel.Role" Width="1.5" PointX="0.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GuidantExerciseModel.User" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="GuidantExerciseModel.FK_Portfolio_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="GuidantExerciseModel.FK_User_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="GuidantExerciseModel.UserRole" ManuallyRouted="false" />
+        <AssociationConnector Association="GuidantExerciseModel.PortfolioPortfolioSecurity" />
+        <EntityTypeShape EntityType="GuidantExerciseModel.Security" Width="1.5" PointX="7" PointY="4.125" />
+        <AssociationConnector Association="GuidantExerciseModel.PortfolioSecuritySecurity" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

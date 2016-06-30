@@ -1,0 +1,9 @@
+﻿@model Guidant.Demo.Portal.Models.LookupResultViewModel
+@if (Model.Result == null)
+{
+    <span>not found</span>
+}
+else
+{
+    <span>@Model.Result.Symbol : $@Model.Result.Price.ToString("N")</span>
+}

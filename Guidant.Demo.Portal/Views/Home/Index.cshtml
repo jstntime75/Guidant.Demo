@@ -1,0 +1,33 @@
+﻿@model Guidant.Demo.Portal.Models.HomeViewModel
+@{
+    ViewBag.Title = "Index";
+}
+@section scripts {
+@Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        function LookupFailure() {
+            alert('symbol lookup failed');
+        }
+    </script>
+}
+<div class="container">
+    <h3>Symbol Lookup:</h3>
+    <div class="form-group">
+        @using (Ajax.BeginForm("_Lookup", new AjaxOptions { AllowCache = false, HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "lookup-result", OnFailure = "LookupFailure" }))
+        {
+            @Html.TextBox("symbol", "", new { @class = "form-control" }) <input type="submit" value="lookup" class="btn btn-large" /><i class="glyphicon glyphicon-forward"></i> <span id="lookup-result"></span>
+        }
+    </div>
+    
+</div>
+<div class="clearfix"></div><br />
+<div class="container">
+    <h3>Portfolios for @Model.ClientName</h3>
+    <div class="list-group">
+    @foreach (var portfolio in Model.Portfolios)
+    {
+        @Html.ActionLink(portfolio.Name, "View", "Portfolio", new { id = portfolio.Id }, new { @class = "list-group-item" })
+    }
+    </div>
+</div>
+

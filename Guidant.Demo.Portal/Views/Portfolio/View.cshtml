@@ -1,0 +1,31 @@
+﻿@model Guidant.Demo.Portal.Models.PortfolioViewModel
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<h2>@Model.Name</h2>
+
+<div class="container">
+    <h3>Securities</h3>
+
+    <table class='table table-bordered table-responsive'>
+        <tr>
+            <th>Symbol</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Count</th>
+            <th>Value</th>
+        </tr>
+        @foreach (var security in Model.Securities)
+        {
+            <tr>
+                <td>@Html.ActionLink(security.Symbol, "View", "Security", new { id = security.Id }, null)</td>
+                <td>@security.Code</td>
+                <td>$@security.Price.ToString("N")</td>
+                <td>@security.Count</td>
+                <td>$@security.TotalValue.ToString("N")</td>
+            </tr>
+        }
+    </table>
+    <div class="alert alert-success">Total Portfolio Value: $@Model.PortfolioValue.ToString("N")</div>
+</div>

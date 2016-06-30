@@ -1,0 +1,10 @@
+﻿@model Guidant.Demo.Portal.Models.SecurityViewModel
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>@Model.Symbol</h2> (@Model.Code)
+<div>
+    Current Price: $@Model.Price.ToString("N")
+</div>
+
